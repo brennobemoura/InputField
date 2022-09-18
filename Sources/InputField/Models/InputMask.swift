@@ -1,6 +1,6 @@
 //
 //  InputMask.swift
-//  
+//
 //
 //  Created by onnerb on 18/09/22.
 //
