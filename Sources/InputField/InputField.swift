@@ -8,7 +8,7 @@
 import SwiftUI
 
 @MainActor
-struct InputField: View {
+public struct InputField: View {
 
     @State var isEditing: Bool = false
 
@@ -34,7 +34,7 @@ struct InputField: View {
     private let accentColor: UIColor
     private let font: UIFont
 
-    init(
+    public init(
         text: Binding<String>,
         foregroundColor: UIColor,
         accentColor: UIColor,
@@ -46,7 +46,7 @@ struct InputField: View {
         self.font = font
     }
 
-    var body: some View {
+    public var body: some View {
         Representable(
             text: $text,
             isEditing: $isEditing,
@@ -68,6 +68,7 @@ struct InputField: View {
             accentColor: accentColor,
             font: font
         )
+        .preference(key: OnEditingPreferenceKey.self, value: isEditing)
         .onChange(of: editing.0) {
             if isEditing != $0 {
                 isEditing = $0

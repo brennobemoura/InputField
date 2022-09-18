@@ -42,7 +42,7 @@ extension View {
 
     @_disfavoredOverload
     @ViewBuilder
-    public func onChange<V>(
+    func onChange<V>(
         of value: V,
         perform action: @escaping (V) -> Void
     ) -> some View where V: Equatable {
